@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Premium Registration Form</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Remix Icons -->
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+    <!--============================
+        Background
+    =============================-->
+
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+    <div class="bg-shape shape3"></div>
+
+    <!--============================
+        Main Container
+    =============================-->
+
+    <section class="container">
+
+        <!--============================
+            LEFT SIDE
+        =============================-->
+
+        <div class="left-panel">
+
+            <div class="logo">
+
+                <i class="ri-shield-star-fill"></i>
+
+                <span>NovaTech</span>
+
+            </div>
+
+            <div class="left-content">
+
+                <h1>
+
+                    Join Our Community
+
+                </h1>
+
+                <p>
+
+                    Create your account and experience a modern,
+                    secure and responsive platform built for everyone.
+
+                </p>
+
+                <div class="features">
+
+                    <div class="feature-card">
+
+                        <i class="ri-lock-2-fill"></i>
+
+                        <div>
+
+                            <h3>Secure Registration</h3>
+
+                            <p>
+                                Industry-standard validation and security.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="feature-card">
+
+                        <i class="ri-flashlight-fill"></i>
+
+                        <div>
+
+                            <h3>Fast Verification</h3>
+
+                            <p>
+                                Real-time validation with instant feedback.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="feature-card">
+
+                        <i class="ri-smartphone-fill"></i>
+
+                        <div>
+
+                            <h3>Mobile Friendly</h3>
+
+                            <p>
+                                Optimized for Desktop, Tablet and Mobile.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--============================
+            RIGHT SIDE
+        =============================-->
+
+        <div class="right-panel">
+
+            <div class="form-card">
+
+                <div class="form-header">
+
+                    <h2>Create Account</h2>
+
+                    <p>
+
+                        Please fill in your details below.
+
+                    </p>
+
+                </div>
+
+                <form
+                    id="registerForm"
+                    novalidate>
+
+                    <!-- Name -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Full Name
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="ri-user-3-line"></i>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your full name">
+
+                            <span class="success-icon">
+                                <i class="ri-checkbox-circle-fill"></i>
+                            </span>
+
+                        </div>
+
+                        <small id="nameError"></small>
+
+                    </div>
+
+                    <!-- Email -->
+
+                    <div class="input-group">
+
+                        <label>
+
+                            Email Address
+
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="ri-mail-line"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email">
+
+                            <span class="success-icon">
+                                <i class="ri-checkbox-circle-fill"></i>
+                            </span>
+
+                        </div>
+
+                        <small id="emailError"></small>
+
+                    </div>
+
+                    <!-- Password -->
+
+                    <div class="input-group">
+
+                        <label>
+
+                            Password
+
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="ri-lock-password-line"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Create password">
+
+                            <button
+                                type="button"
+                                class="toggle-password"
+                                data-target="password">
+
+                                <i class="ri-eye-line"></i>
+
+                            </button>
+
+                        </div>
+
+                        <small id="passwordError"></small>
+
+                        <div class="strength">
+
+                            <div class="strength-bar">
+
+                                <div id="strengthFill"></div>
+
+                            </div>
+
+                            <span id="strengthText">
+
+                                Password Strength
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Confirm Password -->
+
+                    <div class="input-group">
+
+                        <label>
+
+                            Confirm Password
+
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="ri-shield-check-line"></i>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm password">
+
+                            <button
+                                type="button"
+                                class="toggle-password"
+                                data-target="confirmPassword">
+
+                                <i class="ri-eye-line"></i>
+
+                            </button>
+
+                        </div>
+
+                        <small id="confirmError"></small>
+
+                    </div>
+
+                    <!-- Age -->
+
+                    <div class="input-group">
+
+                        <label>
+
+                            Age
+
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="ri-calendar-line"></i>
+
+                            <input
+                                type="number"
+                                id="age"
+                                placeholder="18 - 60">
+
+                            <span class="success-icon">
+                                <i class="ri-checkbox-circle-fill"></i>
+                            </span>
+
+                        </div>
+
+                        <small id="ageError"></small>
+
+                    </div>
+
+                    <!-- Terms -->
+
+                    <div class="terms">
+
+                        <input
+                            type="checkbox"
+                            id="terms">
+
+                        <label for="terms">
+
+                            I agree to the
+
+                            <a href="#">
+
+                                Terms & Conditions
+
+                            </a>
+
+                        </label>
+
+                    </div>
+
+                    <small id="termsError"></small>
+
+                    <!-- Button -->
+
+                    <button
+                        id="submitBtn"
+                        type="submit"
+                        disabled>
+
+                        <span class="btn-text">
+
+                            Create Account
+
+                        </span>
+
+                        <span class="loader"></span>
+
+                    </button>
+
+                </form>
+
+                <div class="signin">
+
+                    Already have an account?
+
+                    <a href="#">
+
+                        Sign In
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--============================
+        SUCCESS MODAL
+    =============================-->
+
+    <div
+        class="modal"
+        id="successModal">
+
+        <div class="modal-box">
+
+            <div class="modal-icon">
+
+                <i class="ri-checkbox-circle-fill"></i>
+
+            </div>
+
+            <h2>
+
+                Registration Successful
+
+            </h2>
+
+            <p>
+
+                Your account has been created successfully.
+
+            </p>
+
+            <button id="continueBtn">
+
+                Continue
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
