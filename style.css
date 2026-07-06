@@ -520,9 +520,19 @@ form{
 
     transform:translateY(-50%);
 
+    width:24px;
+
+    height:24px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
     color:var(--success);
 
-    font-size:22px;
+    font-size:20px;
 
     opacity:0;
 

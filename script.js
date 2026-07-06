@@ -6,6 +6,7 @@ const form = document.getElementById("registerForm");
 
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
+const mobileInput = document.getElementById("mobile");
 const passwordInput = document.getElementById("password");
 const confirmPassword = document.getElementById("confirmPassword");
 const ageInput = document.getElementById("age");
@@ -19,6 +20,7 @@ const submitBtn = document.getElementById("submitBtn");
 
 const nameError = document.getElementById("nameError");
 const emailError = document.getElementById("emailError");
+const mobileError = document.getElementById("mobileError");
 const passwordError = document.getElementById("passwordError");
 const confirmError = document.getElementById("confirmError");
 const ageError = document.getElementById("ageError");
@@ -33,6 +35,9 @@ const emailRegex =
 
 const passwordRegex =
 /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
+
+const mobileRegex =
+/^[6-9]\d{9}$/;
 
 /*=========================================
         SHOW ERROR
@@ -133,6 +138,40 @@ function validateEmail(){
     showSuccess(
         emailInput,
         emailError
+    );
+
+    return true;
+}
+
+function validateMobile(){
+
+    const value = mobileInput.value.trim();
+
+    if(value === ""){
+
+        showError(
+            mobileInput,
+            "Mobile number is required.",
+            mobileError
+        );
+
+        return false;
+    }
+
+    if(!mobileRegex.test(value)){
+
+        showError(
+            mobileInput,
+            "Enter a valid 10-digit mobile number.",
+            mobileError
+        );
+
+        return false;
+    }
+
+    showSuccess(
+        mobileInput,
+        mobileError
     );
 
     return true;
@@ -279,6 +318,7 @@ function checkForm(){
 
         validateName() &&
         validateEmail() &&
+        validateMobile() &&
         validatePassword() &&
         validateConfirmPassword() &&
         validateAge() &&
@@ -302,6 +342,18 @@ nameInput.addEventListener("input",()=>{
 emailInput.addEventListener("input",()=>{
 
     validateEmail();
+
+    checkForm();
+
+});
+
+mobileInput.addEventListener("input",()=>{
+
+    mobileInput.value = mobileInput.value
+        .replace(/\D/g,"")
+        .slice(0,10);
+
+    validateMobile();
 
     checkForm();
 
